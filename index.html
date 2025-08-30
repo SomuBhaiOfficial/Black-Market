@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>CELESTIA -"The Shop That Crafts Your Dream Power"</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Warning Banner -->
+        <div id="warningBanner" class="warning-banner">
+            <div class="warning-content">
+                <span class="warning-icon">⚠️</span>
+                <span class="warning-text">REFUNDS AND RETURNS STRICTLY PROHIBITED</span>
+                <button class="warning-close">&times;</button>
+            </div>
+        </div>
+
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loading-content">
+            <div class="glitch-logo" data-text="CELESTIA ">CELESTIA</div>
+            <div class="loading-spinner"></div>
+            <div id="loadingMessage" class="loading-message">Initializing quantum matrices...</div>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+        </div>
+        <div class="loading-particles"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="mainContent" class="hidden">
+        <!-- Background Effects -->
+        <div class="background-effects">
+            <div class="gradient-bg"></div>
+            <div class="floating-orbs">
+                <div class="orb orb-1"></div>
+                <div class="orb orb-2"></div>
+                <div class="orb orb-3"></div>
+                <div class="orb orb-4"></div>
+                <div class="orb orb-5"></div>
+            </div>
+            <div class="matrix-rain"></div>
+        </div>
+
+        <!-- Header -->
+        <header class="main-header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo-section">
+                        <h1 class="main-logo" id="mainLogo">
+                            <span class="glitch" data-text="⚡ CELESTIA">⚡ CELESTIA ⚡</span>
+                        </h1>
+                        <p class="tagline">The Shop That Crafts Your Dream Power</p>
+                    </div>
+                    
+                    <div class="header-controls">
+                        <div class="security-level">
+                            <span class="security-label">Security Level:</span>
+                            <div class="security-indicator">
+                                <div class="security-bar"></div>
+                                <span id="securityLevel">CLASSIFIED</span>
+                            </div>
+                        </div>
+                        
+                        <button id="cartToggle" class="cart-button">
+                            <span class="cart-icon">🛒</span>
+                            <span id="cartCount" class="cart-count">0</span>
+                            <span class="cart-label">Quantum Cart</span>
+                        </button>
+                        
+                        <button id="adminToggle" class="admin-button hidden">
+                            <span class="admin-icon">🎛️</span>
+                            <span class="admin-label">Control Panel</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="category-nav">
+            <div class="container">
+                <div class="nav-content">
+                    <button class="category-filter active" data-category="all">All Powers</button>
+                    <button class="category-filter" data-category="movement">🏃 Movement</button>
+                    <button class="category-filter" data-category="psychic">🔮 Psychic</button>
+                    <button class="category-filter" data-category="physical">💪 Physical</button>
+                    <button class="category-filter" data-category="energy">⚡ Energy</button>
+                    <button class="category-filter" data-category="stealth">🥷 Stealth</button>
+                    <button class="category-filter" data-category="temporal">⏰ Temporal</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Featured Bundles -->
+        <section class="featured-bundles">
+            <div class="container">
+                <h2 class="section-title">
+                    <span class="neon-text">Special Bundle Offers</span>
+                    <span class="subtitle">Buy 2 Powers, Get 1 Ridiculous Side Effect FREE!</span>
+                </h2>
+                <div id="bundleGrid" class="bundle-grid"></div>
+            </div>
+        </section>
+
+        <!-- Main Product Grid -->
+        <main class="main-content">
+            <div class="container">
+                <div class="products-header">
+                    <h2 class="section-title">
+                        <span class="neon-text">Available Superpowers</span>
+                        <span class="subtitle">Carefully curated cosmic capabilities</span>
+                    </h2>
+                    
+                    <div class="product-controls">
+                        <div class="mystery-box" id="mysteryBox">
+                            <span class="mystery-icon">📦</span>
+                            <span class="mystery-text">Mystery Discount</span>
+                        </div>
+                        
+                        <div class="power-meter">
+                            <span class="meter-label">Cosmic Energy:</span>
+                            <div class="meter-bar">
+                                <div class="meter-fill" id="powerMeter"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="productGrid" class="product-grid"></div>
+                
+                <!-- Similar Products Section -->
+                <div id="similarProducts" class="similar-products hidden">
+                    <h3 class="similar-title">Customers Also Acquired</h3>
+                    <div class="similar-grid" id="similarGrid"></div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Disclaimers -->
+        <section class="disclaimers">
+            <div class="container">
+                <div class="disclaimer-scroll" id="disclaimerScroll"></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Shopping Cart Modal -->
+    <div id="cartModal" class="modal hidden">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Quantum Shopping Cart</h3>
+                <button id="closeCart" class="close-button">×</button>
+            </div>
+            <div class="modal-body">
+                <div id="cartItems" class="cart-items"></div>
+                <div class="cart-summary">
+                    <div class="total-line">
+                        <span>Subtotal:</span>
+                        <span id="cartSubtotal">$0</span>
+                    </div>
+                    <div class="total-line">
+                        <span>Reality Processing Fee:</span>
+                        <span>$49.99</span>
+                    </div>
+                    <div class="total-line final-total">
+                        <span>Total:</span>
+                        <span id="cartTotal">$49.99</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="clearCart" class="btn btn--outline">Clear Cart</button>
+                <button id="checkoutButton" class="btn btn--primary">
+                    <span class="checkout-text">Complete Purchase</span>
+                    <span class="checkout-loading hidden">Processing Reality...</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Panel -->
+    <div id="adminPanel" class="admin-panel hidden">
+        <div class="admin-header">
+            <h3>Control Center</h3>
+            <button id="closeAdmin" class="close-button">×</button>
+        </div>
+        <div class="admin-content">
+            <div class="admin-stats">
+                <div class="stat-card">
+                    <span class="stat-label">Active Powers:</span>
+                    <span id="activePowers" class="stat-value">15</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Quantum Sales:</span>
+                    <span class="stat-value">$42,069</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Side Effects:</span>
+                    <span class="stat-value">∞</span>
+                </div>
+            </div>
+            
+            <div class="admin-form">
+                <h4>Add New Superpower</h4>
+                <form id="addProductForm">
+                    <div class="form-row">
+                        <input type="text" id="productName" placeholder="Power Name" class="form-control" required>
+                        <input type="number" id="productPrice" placeholder="Price" class="form-control" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="text" id="productIcon" placeholder="Icon (emoji)" class="form-control" required>
+                        <select id="productCategory" class="form-control" required>
+                            <option value="">Select Category</option>
+                            <option value="movement">Movement</option>
+                            <option value="psychic">Psychic</option>
+                            <option value="physical">Physical</option>
+                            <option value="energy">Energy</option>
+                            <option value="stealth">Stealth</option>
+                            <option value="temporal">Temporal</option>
+                        </select>
+                    </div>
+                    <textarea id="productDescription" placeholder="Power Description" class="form-control" required></textarea>
+                    <textarea id="productSideEffect" placeholder="Hilarious Side Effect" class="form-control" required></textarea>
+                    <button type="submit" class="btn btn--primary">Add Power</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Detail Modal -->
+    <div id="productModal" class="modal hidden">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content product-detail">
+            <button id="closeProductModal" class="close-button">×</button>
+            <div id="productDetailContent"></div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <!-- Easter Egg Elements -->
+    <div id="konami" class="easter-egg hidden">
+        <div class="easter-content">
+            <h3>🎮 DEVELOPER MODE ACTIVATED</h3>
+            <p>Cheat codes unlocked! Type "POWER" for discount!</p>
+            <div class="cheat-buttons">
+                <button onclick="showSecretMessage()">Secret Message</button>
+                <button onclick="maxPowerMeter()">Max Power</button>
+                <button onclick="unlockAllBundles()">All Bundles</button>
+            </div>
+        </div>
+    </div>
+<!-- Contact Info Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="contact-info">
+                <p>📧 <span id="contactEmail">support@celesta-powers.dark</span></p>
+                <p>📞 1-800-POWERS</p>
+                <p>📍 Location: Hidden</p>
+            </div>
+            <div class="footer-warning">
+                <p>⚠️ All powers come with unique side effects. Purchase at your own risk!</p>
+            </div>
+        </div>
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>
